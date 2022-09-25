@@ -7,7 +7,6 @@ from UI_Plot import *
 print("Loading......")
 
 
-
 class AppWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -15,7 +14,6 @@ class AppWindow(QWidget):
         self.ui.setupUi(self)
         self.setup_control()
         self.show()
-
 
     def setup_control(self):
         self.ui.Button_0.clicked.connect(self.Button_0_clicked)
@@ -39,89 +37,68 @@ class AppWindow(QWidget):
         self.ui.Button_Delete.clicked.connect(self.Button_Delete_clicked)
         self.ui.Button_Equal.clicked.connect(self.Button_Equal_clicked)
 
-
     def Button_0_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "0")
-
 
     def Button_1_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "1")
 
-
     def Button_2_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "2")
-
 
     def Button_3_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "3")
 
-
     def Button_4_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "4")
-
 
     def Button_5_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "5")
 
-
     def Button_6_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "6")
-
 
     def Button_7_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "7")
 
-
     def Button_8_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "8")
-
 
     def Button_9_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "9")
 
-
     def Button_0_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "0")
-
 
     def Button_Dot_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + ".")
 
-
     def Button_AC_clicked(self):
         self.ui.Formula_Text.setText("")
-
 
     def Button_Add_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "+")
 
-
     def Button_Minus_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "-")
-
 
     def Button_Times_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "×")
 
-
     def Button_Divide_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "÷")
-
 
     def Button_LeftBracket_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + "(")
 
-
     def Button_RightBracket_clicked(self):
         self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText() + ")")
-
 
     def Button_Delete_clicked(self):
         if self.ui.Formula_Text.toPlainText() == "":
             pass
         else:
             self.ui.Formula_Text.setText(self.ui.Formula_Text.toPlainText()[:-1])
-
 
     def Button_Equal_clicked(self):
         math_formula = self.ui.Formula_Text.toPlainText()
@@ -132,14 +109,9 @@ class AppWindow(QWidget):
             self.ui.Result_Text.setText(str(eval(math_formula)))
 
 
-
-
-
-
-
 if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
-    Error_Data_Plot = AppWindow()
-    Error_Data_Plot.show()
+    Calculator_Tool = AppWindow()
+    Calculator_Tool.show()
     sys.exit(app.exec_())
